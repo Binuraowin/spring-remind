@@ -4,14 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+@RestController
 public class ReminderController {
     @GetMapping("aliens")
-    @ResponseBody
     public List<String> getList(){
         List<String> count = new ArrayList<>();
         count.add("re");
@@ -21,7 +21,6 @@ public class ReminderController {
     }
 
     @GetMapping("aliens/{id}")
-    @ResponseBody
     public int getAlien(@PathVariable("id") int id){
         return id;
     }
